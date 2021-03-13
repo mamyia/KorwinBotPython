@@ -154,4 +154,4 @@ async def on_message(message):
                                            random.randint(0, len(t5) - 1)] + t6[random.randint(0, len(t6) - 1)])
 
 
-client.run('ODE5OTk2ODY5MzE2MzEzMDg5.YEuvmA.EF3zxuwAdH6XMJ3qGswAwwuE6gw')
+client.run('NTgyNjMwNDQ5NjY3NTA2MTc3.XOwm4w.nFiQ0N7aLwNBY5c6AYX6kbwF6o4')
