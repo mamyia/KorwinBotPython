@@ -1,7 +1,6 @@
-
-
 import discord
 import random
+
 client = discord.Client()
 
 t1 = ['Proszę zwrócić uwagę, że ',
@@ -69,7 +68,7 @@ t3 = ['po przeczytaniu Manifestu komunistycznego',
 t4 = ['udają homoseksualistów ',
       'niszczą rodzinę ',
       'idą do polityki ',
-      'zakazują góralom robienia oscypków' ,
+      'zakazują góralom robienia oscypków',
       'organizują paraolimpiady ',
       'wprowadzają ustrój w którym raz na cztery lata można sobie wybrać pana ',
       'ustawiają fotoradary ',
@@ -111,8 +110,7 @@ t5 = ['żeby podawać wszystkich tresurze',
       'bo bez tego ***tfu*** demokracja nie może istnieć ',
       'bo głupich jest więcej niż mądrych ',
       'bo chcą tworzyć raj na ziemi ',
-      'bo chcą niszczyć cywilizację białego człowieka ' ]
-
+      'bo chcą niszczyć cywilizację białego człowieka ']
 
 t6 = ['co ma zresztą tyle samo sensu co zawody w szachach dla debili. ',
       'co zostało dokładnie zaplanowane w Magdalence przez śp. generała Kiszczaka.',
@@ -136,11 +134,13 @@ t6 = ['co ma zresztą tyle samo sensu co zawody w szachach dla debili. ',
       'co lat temu sto nikomu nie przyszło by do głowy.'
       ]
 
+trigger = ['rząd', 'rzad', 'podat', 'pis', 'duda', '***** ***']
 
-trigger = ['rząd','rzad','podat','pis','duda','***** ***']
+
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
+
 
 @client.event
 async def on_message(message):
@@ -149,8 +149,9 @@ async def on_message(message):
     else:
         res = [ele for ele in trigger if (ele in message.content)]
         if str(bool(res)) == 'True':
-            await message.channel.send(t1[random.randint(0, len(t1)-1)] + t2[random.randint(0,len(t2)-1)] + t3[random.randint(0, len(t3)-1)] + t4[random.randint(0,len(t4)-1)]+ t5[random.randint(0,len(t5)-1)] + t6[random.randint(0,len(t6)-1)])
-
+            await message.channel.send(t1[random.randint(0, len(t1) - 1)] + t2[random.randint(0, len(t2) - 1)] + t3[
+                random.randint(0, len(t3) - 1)] + t4[random.randint(0, len(t4) - 1)] + t5[
+                                           random.randint(0, len(t5) - 1)] + t6[random.randint(0, len(t6) - 1)])
 
 
 client.run('ODE5OTk2ODY5MzE2MzEzMDg5.YEuvmA.EF3zxuwAdH6XMJ3qGswAwwuE6gw')
