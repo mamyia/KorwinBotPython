@@ -1,4 +1,6 @@
+import discord
 import random
+client = discord.Client()
 
 t1 = ['Proszę zwrócić uwagę, że ',
       'I tak mam trzy razy mniej czasu, więc proszę pozwolić mi pozwolić powiedzieć: ',
@@ -39,7 +41,7 @@ t2 = ['właściciele niewolników ',
       'tak zwani ekolodzy ',
       'ci wszyscy (tfu!) demokraci ',
       'agenci bezpieki ',
-      'feminazistki'];
+      'feminazistki']
 t3 = ['po przeczytaniu Manifestu komunistycznego',
       'którym się brzydze',
       'których nienawidzę',
@@ -62,5 +64,25 @@ t3 = ['po przeczytaniu Manifestu komunistycznego',
       'z premedytacją',
       'od czasów Okrągłego stołu',
       'w ramach postępu', ]
+t4 = ['rząd','rzad','podatki','pis','duda','***** ***']
+@client.event
+async def on_ready():
+    print('We have logged in as {0.user}'.format(client))
 
-print(t1[random.randint(0, 20)] + t2[random.randint(0, 20)] + t3[random.randint(0, 20)])
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('elo'):
+        await message.channel.send('elo')
+
+@client.event
+async def on_message(message):
+    res = [ele for ele in t4 if (ele in message.content)]
+    if str(bool(res)) == 'True':
+        await message.channel.send(t1[random.randint(0, 20)] + t2[random.randint(0, 20)] + t3[random.randint(0, 20)])
+
+
+
+client.run('ODE5OTk2ODY5MzE2MzEzMDg5.YEuvmA.EF3zxuwAdH6XMJ3qGswAwwuE6gw')
