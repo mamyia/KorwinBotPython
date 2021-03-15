@@ -134,7 +134,7 @@ t6 = ['co ma zresztą tyle samo sensu co zawody w szachach dla debili. ',
       'co lat temu sto nikomu nie przyszło by do głowy.'
       ]
 
-trigger = ['rząd', 'rzad', 'podat', 'pis', 'duda', '***** ***']
+trigger = ['rząd', 'rzad', 'podat', ' pis ',' pis','pis ', 'duda', '***** ***']
 
 
 @client.event
@@ -147,7 +147,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     else:
-        res = [ele for ele in trigger if (ele in message.content)]
+        res = [ele for ele in trigger if (ele in message.content.lower())]
         if str(bool(res)) == 'True':
             await message.channel.send(t1[random.randint(0, len(t1) - 1)] + t2[random.randint(0, len(t2) - 1)] + t3[
                 random.randint(0, len(t3) - 1)] + t4[random.randint(0, len(t4) - 1)] + t5[
