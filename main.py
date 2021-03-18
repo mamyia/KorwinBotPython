@@ -134,7 +134,7 @@ t6 = ['co ma zresztą tyle samo sensu co zawody w szachach dla debili. ',
       'co lat temu sto nikomu nie przyszło by do głowy.'
       ]
 
-trigger = ['rząd', 'rzad', 'podat', ' pis ',' pis','pis ', 'duda', '***** ***']
+trigger = ['rząd', 'rzad', 'podat', ' pis ','pis ', 'duda', '***** ***']
 
 
 @client.event
