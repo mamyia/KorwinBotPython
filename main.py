@@ -154,4 +154,4 @@ async def on_message(message):
                                            random.randint(0, len(t5) - 1)] + t6[random.randint(0, len(t6) - 1)])
 
 
-client.run('')
+client.run('') #<---twój token tutaj
